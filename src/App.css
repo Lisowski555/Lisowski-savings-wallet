@@ -1,0 +1,40 @@
+.app {
+  display: flex;
+  height: 100vh;
+  font-family: sans-serif;
+  background-color: #f6f3ef;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #1c1c1c;
+  color: white;
+  padding: 2rem;
+}
+
+.sidebar h1 {
+  font-size: 24px;
+  margin-bottom: 2rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+.main {
+  flex: 1;
+  padding: 2rem;
+}
+
+.card {
+  background: darkgrey;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
