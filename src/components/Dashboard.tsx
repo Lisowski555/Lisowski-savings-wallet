@@ -1,6 +1,8 @@
-import TypeGroup from "./TypeGroup.tsx";
+import SavingsAccounts from "./SavingAccounts/SavingsAccounts.tsx";
+import SavingsDeposits from "./SavingsDeposits/SavingsDeposits.tsx";
 
 function Dashboard() {
+    // TODO - move Current Balance to separate component
     return (
         <div className="main">
             <h2 style={{ fontSize: '28px', marginBottom: '20px' }}>Overview</h2>
@@ -10,7 +12,8 @@ function Dashboard() {
                     <p style={{ fontSize: '24px', fontWeight: 'bold' }}>$4,836.00</p>
                 </div>
             </div>
-            <TypeGroup typeName={"Saving accounts"}/>
+            <SavingsAccounts />
+            <SavingsDeposits />
         </div>
     );
 }
