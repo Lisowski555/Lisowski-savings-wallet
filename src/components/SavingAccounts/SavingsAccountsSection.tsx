@@ -1,10 +1,10 @@
 import SavingsAccount, {type SavingsAccountProps} from "./SavingsAccount.tsx";
 
-export default function SavingsAccountsSection(/*here comes argument (props)*/) {
-    const accounts: SavingsAccountProps[] = [ // TODO this accounts should come from property (functions argument)
-        {title: "Account 1", rate: 0.05, amount: 1000},
-        {title: "Account 2", rate: 0.05, amount: 2000},
-    ]
+interface SavingsAccountsSectionProps {
+    accounts: SavingsAccountProps[];
+}
+
+export default function SavingsAccountsSection({accounts}: SavingsAccountsSectionProps) {
 
     return (
         <div>
