@@ -11,7 +11,7 @@ export interface SavingsAccount {
 
 export interface SavingsDeposit {
     title: string,
-    endDate: Date,
+    endDate: string,
     rate: number,
     amount: number,
 }

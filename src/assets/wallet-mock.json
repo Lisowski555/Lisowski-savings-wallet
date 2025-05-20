@@ -1,0 +1,10 @@
+{
+  "savingsAccounts": [
+    {"title": "Account 1", "rate": 0.05, "amount": 100},
+    {"title": "Account 2", "rate": 0.05, "amount": 200}
+  ],
+  "savingsDeposits": [
+    {"title": "Deposit 1", "endDate": "2024-01-01", "rate": 0.04, "amount": 1000},
+    {"title": "Deposit 2", "endDate": "2024-01-01", "rate": 0.045, "amount": 2000}
+  ]
+}

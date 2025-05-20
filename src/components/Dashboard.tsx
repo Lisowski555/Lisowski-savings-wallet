@@ -2,23 +2,27 @@ import SavingsAccountsSection from "./SavingAccounts/SavingsAccountsSection.tsx"
 import SavingsDepositsSection from "./SavingsDeposits/SavingsDepositsSection.tsx";
 import TotalBalance from "./TotalBalance.tsx";
 import type {Wallet} from "../types/Wallet.ts";
+import {useQuery} from "@tanstack/react-query";
+import {fetchWallet} from "../api/wallet.ts";
+import SaveButton from "./SaveButton.tsx";
 
 function Dashboard() {
-    // TODO -> zaczytac go (wallet) korzystajc z React Query (npm install -s react-query (czy cos -to jednak teraz Tanstack query))
-    const wallet: Wallet = {
-        savingsAccounts: [
-            {title: "Account 1", rate: 0.05, amount: 100},
-            {title: "Account 2", rate: 0.05, amount: 200},
-        ],
-        savingsDeposits: [
-            {title: "Deposit 1", endDate: new Date(), rate: 0.04, amount: 1000},
-            {title: "Deposit 2", endDate: new Date(), rate: 0.045, amount: 2000},
-        ],
-    };
+    const { data, isLoading, isError } = useQuery<Wallet, Error>({
+        queryKey: ["wallet"],
+        queryFn: fetchWallet,
+        staleTime: 30_000,
+        refetchOnWindowFocus: false,
+    });
+
+    if (isLoading) return <div>Loading...</div>;
+    if (isError) return <div>Oh no! Something went wrong!</div>;
+    if (!data) return <div>No wallet found</div>;
+
+    const wallet = data;
 
     return (
         <div className="main">
-            <h2 style={{fontSize: '28px', marginBottom: '20px'}}>Overview</h2>
+            <h2 style={{fontSize: '28px', marginBottom: '20px'}}>Dashboard</h2>
             <TotalBalance amount={calculateTotalBalance(wallet)}/>
             {/* TODO - improve styling -> Sections and account / deposit components looks ugly (play with flex and CSS to */}
             {/*make it look beautiful*/}
@@ -26,6 +30,7 @@ function Dashboard() {
             {/* or https://lineicons.com/ */}
             <SavingsAccountsSection accounts={wallet.savingsAccounts}/>
             <SavingsDepositsSection deposits={wallet.savingsDeposits}/>
+            <SaveButton />
         </div>
     );
 }
