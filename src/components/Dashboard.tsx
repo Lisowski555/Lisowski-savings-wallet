@@ -4,6 +4,7 @@ import TotalBalance from "./TotalBalance.tsx";
 import type {Wallet} from "../types/Wallet.ts";
 
 function Dashboard() {
+    // TODO -> zaczytac go (wallet) korzystajc z React Query (npm install -s react-query (czy cos -to jednak teraz Tanstack query))
     const wallet: Wallet = {
         savingsAccounts: [
             {title: "Account 1", rate: 0.05, amount: 100},
@@ -19,6 +20,10 @@ function Dashboard() {
         <div className="main">
             <h2 style={{fontSize: '28px', marginBottom: '20px'}}>Overview</h2>
             <TotalBalance amount={calculateTotalBalance(wallet)}/>
+            {/* TODO - improve styling -> Sections and account / deposit components looks ugly (play with flex and CSS to */}
+            {/*make it look beautiful*/}
+            {/* You may use some nice icons in Cards to make them look better - https://fontawesome.com/icons */}
+            {/* or https://lineicons.com/ */}
             <SavingsAccountsSection accounts={wallet.savingsAccounts}/>
             <SavingsDepositsSection deposits={wallet.savingsDeposits}/>
         </div>
@@ -30,7 +35,6 @@ function calculateTotalBalance(wallet: Wallet): number {
 
     let totalBalance = 0;
 
-    // sum savings accounts balance
     for (let i = 0; i < savingsAccounts.length; i++) {
         const account = savingsAccounts[i];
         const money = account.amount;
