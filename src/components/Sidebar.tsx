@@ -1,16 +1,11 @@
-function Sidebar() {
+import {Link} from 'react-router-dom';
+
+
+export default function Sidebar() {
     return (
-        <div className="sidebar">
-            <h1>finance</h1>
-            <ul>
-                <li style={{ color: 'lightgreen', fontWeight: 'bold' }}>Overview</li>
-                <li>Transactions</li>
-                <li>Budgets</li>
-                <li>Pots</li>
-                <li>Recurring Bills</li>
-            </ul>
-        </div>
+        <nav className="sidebar">
+            <Link to="">Dashboard</Link>
+            <Link to="/add-account">Add new savings account</Link>
+        </nav>
     );
 }
-
-export default Sidebar;

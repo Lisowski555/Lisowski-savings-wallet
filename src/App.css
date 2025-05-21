@@ -9,21 +9,16 @@
     background-color: #1c1c1c;
     color: white;
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
 }
 
-.sidebar h1 {
+.sidebar>* {
     font-size: 24px;
-    margin-bottom: 2rem;
-}
-
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-}
-
-.sidebar li {
     margin: 1rem 0;
     cursor: pointer;
+    display: block;
+    color: white;
 }
 
 .main {
