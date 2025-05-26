@@ -1,0 +1,42 @@
+
+.totalBalance {
+    position: relative;
+    overflow: hidden;
+    background: #000;
+}
+
+.totalBalance::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url("../assets/poop.svg") center no-repeat;
+    filter: blur(2px);
+    z-index: 1;
+    animation: none;
+}
+
+.totalBalance:hover::before {
+    animation: jump-animation 0.5s infinite;
+}
+
+.totalBalanceContent {
+    font-size: 24px;
+    font-weight: bold;
+    position: relative;
+    z-index: 2;
+    text-shadow:
+            black 0 0 4px,
+            green 0 0 5px;
+}
+
+@keyframes jump-animation {
+    0%   { transform: translateY(0); }
+    10%  { transform: translateY(0); }
+    20%  { transform: translateY(10px) scaleY(0.9) scaleX(1.1); }
+    30% { transform: translateY(0); }
+    60%  { transform: translateY(-10px) scale(1.02); }
+    70%  { transform: translateY(-20px) scale(1.05); }
+    80%  { transform: translateY(-20px) scale(1.05); }
+    90%  { transform: translateY(-10px) scale(1.02); }
+    100% { transform: translateY(0); }
+}

@@ -3,7 +3,6 @@ import Sidebar from "./components/Sidebar.tsx";
 import Dashboard from "./components/Dashboard.tsx";
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 import {Routes, Route, BrowserRouter} from "react-router-dom";
-import AddAccountPage from "./pages/AddAccountPage";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
