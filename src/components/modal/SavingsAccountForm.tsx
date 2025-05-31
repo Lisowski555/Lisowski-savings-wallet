@@ -22,7 +22,7 @@ export default function SavingsAccountForm({ onSave } : Props) {
         <form onSubmit={handleSubmit}>
             <label>
                 Account name:
-                <input value={name}
+                <input value={name} required={true}
                         onChange={e=> setName(e.target.value)} />
             </label>
             <button type="submit">Save</button>
