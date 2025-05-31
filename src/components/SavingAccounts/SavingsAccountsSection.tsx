@@ -6,8 +6,10 @@ interface SavingsAccountsSectionProps {
 
 export default function SavingsAccountsSection({accounts}: SavingsAccountsSectionProps) {
 
+    // TODO add modal to add account
+
     return (
-        <div>
+        <div className="section">
             <h2>Savings accounts</h2>
             <div className="card-group">
                 {accounts.map(account => (
@@ -15,6 +17,7 @@ export default function SavingsAccountsSection({accounts}: SavingsAccountsSectio
                                     rate={account.rate}
                                     amount={account.amount}/>
                 ))}
+                <button className="card">+</button>
             </div>
         </div>
     )

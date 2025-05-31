@@ -6,11 +6,14 @@ interface SavingsDepositsSectionProps {
 
 export default function SavingsDepositsSection({deposits}: SavingsDepositsSectionProps) {
 
+    // TODO add modal to add savings deposit
+
     return (
-        <div>
+        <div className="section">
             <h2>Savings deposits</h2>
             <div className="card-group">
                 {deposits.map(deposit => (<SavingsDeposit {...deposit}/>))}
+                <button className="card">+</button>
             </div>
         </div>
     )

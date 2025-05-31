@@ -61,7 +61,7 @@ function Dashboard() {
             <SavingsAccountsSection accounts={wallet.savingsAccounts}/>
             <SavingsDepositsSection deposits={wallet.savingsDeposits}/>
 
-            <button className="kutas button" onClick={() => setModalOpen(true)}>Add account</button>
+            <button onClick={() => setModalOpen(true)}>Add account</button>
             <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)}>
                 <SavingsAccountForm onSave={handleSaveNewAccount} />
             </Modal>

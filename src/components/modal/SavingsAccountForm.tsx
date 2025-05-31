@@ -25,7 +25,7 @@ export default function SavingsAccountForm({ onSave } : Props) {
                 <input value={name} required={true}
                         onChange={e=> setName(e.target.value)} />
             </label>
-            <button className="kutas" type="submit">Save</button>
+            <button type="submit">Save</button>
         </form>
 
     );

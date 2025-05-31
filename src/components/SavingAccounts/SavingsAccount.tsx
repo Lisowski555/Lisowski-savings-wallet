@@ -8,10 +8,10 @@ export interface SavingsAccountProps {
 
 export default function SavingsAccount({title, rate, amount}: SavingsAccountProps) {
     return (
-        <div>
+        <div className="card">
             <h3>{title}</h3>
             <p>Rate: {toPercents(rate)}</p>
-            <p>Amount: ${amount}</p>
+            <p className="display-amount">Amount: ${amount}</p>
         </div>
     )
 }

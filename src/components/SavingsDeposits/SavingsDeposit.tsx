@@ -9,11 +9,11 @@ export interface SavingsDepositProps {
 
 export default function SavingsDeposit({title, endDate, rate, amount}: SavingsDepositProps) {
     return (
-        <div>
+        <div className="card">
             <h3>{title}</h3>
             <p>End date: {endDate}</p>
             <p>Rate: {toPercents(rate)}</p>
-            <p>Amount: ${amount}</p>
+            <p className="display-amount">Amount: ${amount}</p>
         </div>
     )
 }

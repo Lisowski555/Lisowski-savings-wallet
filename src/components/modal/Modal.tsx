@@ -15,7 +15,7 @@ const modalStyles: React.CSSProperties = {
 };
 
 const modalContentStyles: React.CSSProperties = {
-    background: "#fff",
+    background: "var(--background-color)",
     padding: "2rem",
     borderRadius: "8px",
     minWidth: "300px",
@@ -28,7 +28,7 @@ export default function Modal({isOpen, onClose, children}: Props) {
     return (
         <div style={modalStyles} onClick={onClose}>
             <div style={modalContentStyles} onClick={e => e.stopPropagation()}>
-                <button className="kutas" style={{ float: "right" }} onClick={onClose}>X</button>
+                <button style={{ float: "right" }} onClick={onClose}>X</button>
                 {children}
             </div>
         </div>
