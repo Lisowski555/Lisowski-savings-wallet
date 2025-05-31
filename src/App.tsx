@@ -21,6 +21,7 @@ function App() {
                 <BrowserRouter>
                     <div className={(darkTheme ? "app dark-theme" : "app")}>
                         <ThemeToggle isDark={darkTheme} onToggle={toggleTheme} />
+                        {/* TODO IMPORTANT W CHUJ! WYPIERDOL SIDEBAR + fix styling of the page*/}
                         <Sidebar/>
                         <Routes>
                             <Route path="" element={<Dashboard/>}/>

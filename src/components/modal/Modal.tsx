@@ -22,6 +22,8 @@ const modalContentStyles: React.CSSProperties = {
     maxWidth: "90vw",
 };
 
+// TODO IMPORTANT (II) -> fix styling move it to separate css use theme colors for example `var(--primary-color)`
+
 export default function Modal({isOpen, onClose, children}: Props) {
     if (!isOpen) return null;
 

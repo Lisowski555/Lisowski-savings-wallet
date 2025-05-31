@@ -19,6 +19,7 @@ export default function SavingsAccountForm({ onSave } : Props) {
     }
 
     return (
+        // TODO make it full form (it doesnt cover all of the account props)
         <form onSubmit={handleSubmit}>
             <label>
                 Account name:

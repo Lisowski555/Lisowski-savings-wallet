@@ -1,12 +1,14 @@
 import SavingsAccount, {type SavingsAccountProps} from "./SavingsAccount.tsx";
+import type {SavingsAccount as Account} from "../../types/Wallet.ts";
 
 interface SavingsAccountsSectionProps {
     accounts: SavingsAccountProps[];
+    saveNewAccount: (account: Account) => void;
 }
 
-export default function SavingsAccountsSection({accounts}: SavingsAccountsSectionProps) {
+export default function SavingsAccountsSection({accounts, saveNewAccount}: SavingsAccountsSectionProps) {
 
-    // TODO add modal to add account
+    // TODO add modal to add account (see current implementation in Dashboard)
 
     return (
         <div className="section">

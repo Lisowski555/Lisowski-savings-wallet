@@ -1,4 +1,5 @@
 :root {
+    /* Light theme colors */
     --primary-color: #A66FB5;
     --secondary-color: #6BC1B6;
     --background-color: #F7F7F2;
@@ -19,6 +20,7 @@
 }
 
 .dark-theme {
+    /* Dark theme colors */
     --primary-color: #341539;
     --secondary-color: #4ECDC4;
     --background-color: #18191A;
@@ -32,7 +34,7 @@
 * {
     margin: 0;
     padding: 0;
-    transition: 0.4s;
+    transition: background-color 0.4s;
 }
 
 body {

@@ -19,7 +19,7 @@ import {useState} from "react";
 // }
 
 function Dashboard() {
-    const [modalOpen, setModalOpen] = useState(false);
+    const [modalOpen, setModalOpen] = useState(false); // TODO move to section components to add account / deposit
     const queryClient = useQueryClient();
 
     const mutation = useMutation({
@@ -27,7 +27,7 @@ function Dashboard() {
         onSuccess: (newWallet: Wallet) => {
             queryClient.setQueryData(['wallet'], newWallet);
         }
-    })
+    });
 
     const { data, isLoading, isError } = useQuery<Wallet, Error>({
         queryKey: ["wallet"],
@@ -43,7 +43,7 @@ function Dashboard() {
     const wallet = data;
 
     function handleSaveNewAccount(newSavingsAccount: SavingsAccount) {
-        setModalOpen(false);
+        setModalOpen(false); // TODO move this state to Section component
         mutation.mutate({
             ...wallet,
             savingsAccounts: [...(wallet.savingsAccounts), newSavingsAccount]
@@ -54,13 +54,15 @@ function Dashboard() {
         <div className="main">
             <h2 style={{fontSize: '28px', marginBottom: '20px'}}>Dashboard</h2>
             <TotalBalance amount={calculateTotalBalance(wallet)}/>
-            {/* TODO - improve styling -> Sections and account / deposit components looks ugly (play with flex and CSS to */}
-            {/*make it look beautiful*/}
+            {/* TODO - improve styling */}
             {/* You may use some nice icons in Cards to make them look better - https://fontawesome.com/icons */}
             {/* or https://lineicons.com/ */}
-            <SavingsAccountsSection accounts={wallet.savingsAccounts}/>
+
+            {/* TODO IMPORTANT - pass saveNewAccount / Deposit to sections*/}
+            <SavingsAccountsSection accounts={wallet.savingsAccounts} saveNewAccount={handleSaveNewAccount}/>
             <SavingsDepositsSection deposits={wallet.savingsDeposits}/>
 
+            {/* TODO IMPORTANT - move this logic to handle adding account / deposit on '+' buttons in sections */}
             <button onClick={() => setModalOpen(true)}>Add account</button>
             <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)}>
                 <SavingsAccountForm onSave={handleSaveNewAccount} />
