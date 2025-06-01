@@ -20,3 +20,52 @@
     <ellipse id="XMLID_548_" cx="37.3" cy="32.7" class="st81" rx="2.3" ry="1.4"/>
   </g>
 </svg>
+
+<!--<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">-->
+<!--<defs>-->
+<!--  <radialGradient id="zloto" cx="50%" cy="50%" r="50%">-->
+<!--    <stop offset="0%" stop-color="#fffbe8"/>-->
+<!--    <stop offset="60%" stop-color="#ffe066"/>-->
+<!--    <stop offset="100%" stop-color="#bb9500"/>-->
+<!--  </radialGradient>-->
+<!--</defs>-->
+<!--&lt;!&ndash; Moneta &ndash;&gt;-->
+<!--<circle cx="50" cy="50" r="48" fill="url(#zloto)" stroke="#bfa940" stroke-width="2"/>-->
+<!--&lt;!&ndash; Orzeł: korpus &ndash;&gt;-->
+<!--<g>-->
+<!--  &lt;!&ndash; Ogon wachlarzowy &ndash;&gt;-->
+<!--  <path d="M50 70 L43 87 Q50 83 57 87 Z" fill="#fff" stroke="#888" stroke-width="1"/>-->
+<!--  <path d="M47 80 Q50 78 53 80 Q50 82 47 80" fill="#bfa940" />-->
+<!--  &lt;!&ndash; Tułów &ndash;&gt;-->
+<!--  <ellipse cx="50" cy="55" rx="11" ry="17" fill="#fff" stroke="#888" stroke-width="1.2"/>-->
+<!--  &lt;!&ndash; Głowa &ndash;&gt;-->
+<!--  <ellipse cx="50" cy="36" rx="5" ry="6" fill="#fff" stroke="#888" stroke-width="1"/>-->
+<!--  &lt;!&ndash; Dziób &ndash;&gt;-->
+<!--  <path d="M54 36 Q58 37 53 39 Q54 37 54 36" fill="#ffd700" stroke="#bfa940" stroke-width="0.7"/>-->
+<!--  &lt;!&ndash; Oko &ndash;&gt;-->
+<!--  <circle cx="53" cy="35" r="0.8" fill="#111"/>-->
+<!--  &lt;!&ndash; Korona &ndash;&gt;-->
+<!--  <polygon points="50,28 48,33 52,33" fill="#ffd700" stroke="#bfa940" stroke-width="0.7"/>-->
+<!--  <circle cx="50" cy="27" r="1.1" fill="#ffd700" stroke="#bfa940" stroke-width="0.7"/>-->
+<!--  &lt;!&ndash; Skrzydło lewe &ndash;&gt;-->
+<!--  <path d="M50 40 Q32 30 23 18 Q30 38 42 45 Q33 44 22 40 Q35 50 45 50" fill="#fff" stroke="#888" stroke-width="1.2"/>-->
+<!--  &lt;!&ndash; Skrzydło prawe &ndash;&gt;-->
+<!--  <path d="M50 40 Q68 30 77 18 Q70 38 58 45 Q67 44 78 40 Q65 50 55 50" fill="#fff" stroke="#888" stroke-width="1.2"/>-->
+<!--  &lt;!&ndash; Pióra na skrzydłach &ndash;&gt;-->
+<!--  <path d="M35 37 Q32 27 25 20" fill="none" stroke="#bbb" stroke-width="0.7"/>-->
+<!--  <path d="M65 37 Q68 27 75 20" fill="none" stroke="#bbb" stroke-width="0.7"/>-->
+<!--  &lt;!&ndash; Pazury lewe &ndash;&gt;-->
+<!--  <ellipse cx="44" cy="74" rx="1.2" ry="3" fill="#ffd700" stroke="#bfa940" stroke-width="0.7" transform="rotate(-25 44 74)"/>-->
+<!--  <ellipse cx="47" cy="77" rx="1.2" ry="2.7" fill="#ffd700" stroke="#bfa940" stroke-width="0.7" transform="rotate(-10 47 77)"/>-->
+<!--  &lt;!&ndash; Pazury prawe &ndash;&gt;-->
+<!--  <ellipse cx="56" cy="77" rx="1.2" ry="2.7" fill="#ffd700" stroke="#bfa940" stroke-width="0.7" transform="rotate(10 56 77)"/>-->
+<!--  <ellipse cx="59" cy="74" rx="1.2" ry="3" fill="#ffd700" stroke="#bfa940" stroke-width="0.7" transform="rotate(25 59 74)"/>-->
+<!--  &lt;!&ndash; Pióra ogona &ndash;&gt;-->
+<!--  <path d="M50 70 Q50 83 43 87" fill="none" stroke="#888" stroke-width="0.7"/>-->
+<!--  <path d="M50 70 Q50 83 57 87" fill="none" stroke="#888" stroke-width="0.7"/>-->
+<!--  &lt;!&ndash; Linia między skrzydłami a korpusem &ndash;&gt;-->
+<!--  <path d="M43 45 Q50 48 57 45" fill="none" stroke="#888" stroke-width="0.7"/>-->
+<!--</g>-->
+<!--&lt;!&ndash; Obramowanie monety &ndash;&gt;-->
+<!--<circle cx="50" cy="50" r="47" fill="none" stroke="#f7e685" stroke-width="1"/>-->
+<!--</svg>-->
