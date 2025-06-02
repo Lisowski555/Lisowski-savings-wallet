@@ -6,7 +6,7 @@ interface SavingsDepositsSectionProps {
 
 export default function SavingsDepositsSection({deposits}: SavingsDepositsSectionProps) {
 
-    // TODO IMPORTANT add modal to add savings deposit - follow the same steps as for Account + add add new SavingsDepositForm component
+    // TODO IMPORTANT add modals to add savings deposit - follow the same steps as for Account + add add new SavingsDepositForm component
 
     return (
         <div className="section">

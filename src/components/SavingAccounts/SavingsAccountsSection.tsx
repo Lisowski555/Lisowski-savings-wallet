@@ -8,7 +8,7 @@ interface SavingsAccountsSectionProps {
 
 export default function SavingsAccountsSection({accounts, saveNewAccount}: SavingsAccountsSectionProps) {
 
-    // TODO add modal to add account (see current implementation in Dashboard)
+    // TODO add modals to add account (see current implementation in Dashboard)
 
     return (
         <div className="section">

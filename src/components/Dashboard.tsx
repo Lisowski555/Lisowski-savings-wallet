@@ -5,8 +5,8 @@ import type {SavingsAccount, Wallet} from "../types/Wallet.ts";
 import {useMutation, useQuery, useQueryClient} from "@tanstack/react-query";
 import {fetchWallet, saveWallet} from "../api/wallet.ts";
 // import SaveButton from "./SaveButton.tsx";
-import Modal from "./modal/Modal.tsx";
-import SavingsAccountForm from "./modal/SavingsAccountForm.tsx";
+import Modal from "./modals/Modal.tsx";
+import SavingsAccountForm from "./modals/SavingsAccountForm.tsx";
 import {useState} from "react";
 // import walletMock from "../assets/wallet-mock.json";
 

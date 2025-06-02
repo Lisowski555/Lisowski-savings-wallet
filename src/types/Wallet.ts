@@ -15,3 +15,4 @@ export interface SavingsDeposit {
     rate: number,
     amount: number,
 }
+
