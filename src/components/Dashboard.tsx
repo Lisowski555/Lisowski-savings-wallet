@@ -5,6 +5,9 @@ import type {SavingsAccount, SavingsDeposit, Wallet} from "../types/Wallet.ts";
 import {useMutation, useQuery, useQueryClient} from "@tanstack/react-query";
 import {fetchWallet, saveWallet} from "../api/wallet.ts";
 
+//TODO IMPORTANT ZRÓB LOGIN SCREEN I OGARNIJ LOGOWANIE DO STRONY! (istotne przy hybryddowej)
+//TODO IMPORTANT ogarnąć plik co zrobi z tego prawdziwe PWA (https://web.dev/learn/pwa/web-app-manifest?hl=pl) PLIK MANIFESTU
+
 
 function Dashboard() {
     const queryClient = useQueryClient();
