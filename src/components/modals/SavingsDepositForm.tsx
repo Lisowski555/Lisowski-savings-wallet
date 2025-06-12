@@ -1,25 +1,28 @@
 import {useState} from "react";
-import type {SavingsAccount} from "../../types/Wallet.ts";
+import type {SavingsDeposit} from "../../types/Wallet.ts";
 
 interface Props {
-    onSave: (account: SavingsAccount) => void;
+    onSave: (account: SavingsDeposit) => void;
 }
 
+//TODO ogarnij closures w Reactcie
 
 
-export default function SavingsAccountForm({onSave}: Props) {
+export default function SavingsDepositForm({onSave}: Props) {
     const [name, setName] = useState("");
+    const [endDate, setEndDate] = useState("");
     const [rate, setRate] = useState(0);
     const [amount, setAmount] = useState(0);
 
     function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
-        const newAccount = {
+        const newDeposit = {
             title: name,
+            endDate,
             rate : rate/100,
-            amount: amount
-        } as SavingsAccount;
-        onSave(newAccount);
+            amount
+        } as SavingsDeposit;
+        onSave(newDeposit);
     }
 
     return (
@@ -28,6 +31,15 @@ export default function SavingsAccountForm({onSave}: Props) {
                 Account name:
                 <input value={name} required={true}
                        onChange={e => setName(e.target.value)}/>
+            </label>
+            <label>
+                Deposit end date:
+                <input
+                    type="date"
+                    value={endDate}
+                    required={true}
+                    onChange={e => setEndDate(e.target.value)}
+                />
             </label>
             <label>
                 Account Rate:

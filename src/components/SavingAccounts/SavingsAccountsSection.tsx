@@ -1,5 +1,8 @@
 import SavingsAccount, {type SavingsAccountProps} from "./SavingsAccount.tsx";
 import type {SavingsAccount as Account} from "../../types/Wallet.ts";
+import Modal from "../modals/Modal.tsx";
+import SavingsAccountForm from "../modals/SavingsAccountForm.tsx";
+import {useState} from "react";
 
 interface SavingsAccountsSectionProps {
     accounts: SavingsAccountProps[];
@@ -8,7 +11,13 @@ interface SavingsAccountsSectionProps {
 
 export default function SavingsAccountsSection({accounts, saveNewAccount}: SavingsAccountsSectionProps) {
 
-    // TODO add modals to add account (see current implementation in Dashboard)
+    const [modalOpen, setModalOpen] = useState(false);
+
+    function onSave(account: Account) {
+        setModalOpen(false) //zamykanie modala
+
+        saveNewAccount(account)
+    }
 
     return (
         <div className="section">
@@ -19,7 +28,10 @@ export default function SavingsAccountsSection({accounts, saveNewAccount}: Savin
                                     rate={account.rate}
                                     amount={account.amount}/>
                 ))}
-                <button className="card">+</button>
+                <button className="card" onClick={() => setModalOpen(true)}>➕</button>
+                <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)}>
+                    <SavingsAccountForm onSave={onSave}/>
+                </Modal>
             </div>
         </div>
     )

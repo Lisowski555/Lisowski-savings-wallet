@@ -1,25 +1,12 @@
 import SavingsAccountsSection from "./SavingAccounts/SavingsAccountsSection.tsx";
 import SavingsDepositsSection from "./SavingsDeposits/SavingsDepositsSection.tsx";
 import TotalBalance from "./TotalBalance.tsx";
-import type {SavingsAccount, Wallet} from "../types/Wallet.ts";
+import type {SavingsAccount, SavingsDeposit, Wallet} from "../types/Wallet.ts";
 import {useMutation, useQuery, useQueryClient} from "@tanstack/react-query";
 import {fetchWallet, saveWallet} from "../api/wallet.ts";
-// import SaveButton from "./SaveButton.tsx";
-import Modal from "./modals/Modal.tsx";
-import SavingsAccountForm from "./modals/SavingsAccountForm.tsx";
-import {useState} from "react";
-// import walletMock from "../assets/wallet-mock.json";
 
-// function getWalletMock(){
-//     const mockRaw = localStorage.getItem("wallet-mock");
-//     if (mockRaw) {
-//         return JSON.parse(mockRaw);
-//     }
-//     return walletMock
-// }
 
 function Dashboard() {
-    const [modalOpen, setModalOpen] = useState(false); // TODO move to section components to add account / deposit
     const queryClient = useQueryClient();
 
     const mutation = useMutation({
@@ -43,10 +30,16 @@ function Dashboard() {
     const wallet = data;
 
     function handleSaveNewAccount(newSavingsAccount: SavingsAccount) {
-        setModalOpen(false); // TODO move this state to Section component
         mutation.mutate({
             ...wallet,
             savingsAccounts: [...(wallet.savingsAccounts), newSavingsAccount]
+        });
+    }
+
+    function handleSaveNewDeposit(newSavingsDeposit: SavingsDeposit) {
+        mutation.mutate({
+            ...wallet,
+            savingsDeposits: [...(wallet.savingsDeposits), newSavingsDeposit]
         });
     }
 
@@ -58,15 +51,11 @@ function Dashboard() {
             {/* You may use some nice icons in Cards to make them look better - https://fontawesome.com/icons */}
             {/* or https://lineicons.com/ */}
 
-            {/* TODO IMPORTANT - pass saveNewAccount / Deposit to sections*/}
             <SavingsAccountsSection accounts={wallet.savingsAccounts} saveNewAccount={handleSaveNewAccount}/>
-            <SavingsDepositsSection deposits={wallet.savingsDeposits}/>
+            <SavingsDepositsSection deposits={wallet.savingsDeposits} saveNewDeposit={handleSaveNewDeposit}/>
 
-            {/* TODO IMPORTANT - move this logic to handle adding account / deposit on '+' buttons in sections */}
-            <button onClick={() => setModalOpen(true)}>Add account</button>
-            <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)}>
-                <SavingsAccountForm onSave={handleSaveNewAccount} />
-            </Modal>
+            {/* TODO NOT IMPORTANT - dodaj sobie przycisk add account który nie działa */}
+
         </div>
     );
 }
