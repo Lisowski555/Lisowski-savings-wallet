@@ -1,0 +1,23 @@
+{
+  "name": "Saving Wallet",
+  "short_name": "Wallet",
+  "description": "Aplikacja do zarządzania oszczędnościami.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1976d2",
+  "lang": "pl-PL",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "dolar.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "vite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
