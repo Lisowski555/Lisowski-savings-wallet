@@ -1,0 +1,65 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Cyberpunkowe gradienty i efekty -->
+    <radialGradient id="cyberpunkCoin" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0a1a0a"/>
+      <stop offset="60%" stop-color="#0b5120"/>
+      <stop offset="100%" stop-color="#072610"/>
+    </radialGradient>
+    <linearGradient id="dollarNeon" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00ffae"/>
+      <stop offset="40%" stop-color="#00ff6a"/>
+      <stop offset="80%" stop-color="#2aff00"/>
+      <stop offset="100%" stop-color="#00ffe7"/>
+    </linearGradient>
+    <radialGradient id="coinGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="70%" stop-color="#00ff80" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#00ff80" stop-opacity="0.01"/>
+    </radialGradient>
+    <filter id="neonDollar" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#29ffc6" flood-opacity="0.9"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#00ff33" flood-opacity="0.5"/>
+    </filter>
+    <filter id="cyberGlow" x="-40%" y="-40%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="coinStroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00ffb0"/>
+      <stop offset="100%" stop-color="#1dff00"/>
+    </linearGradient>
+  </defs>
+  <!-- Tło monety z wewnętrznym blaskiem -->
+  <circle cx="50" cy="50" r="48" fill="url(#cyberpunkCoin)" />
+  <circle cx="50" cy="50" r="47" fill="url(#coinGlow)" />
+  <!-- Obramowanie monety -->
+  <circle cx="50" cy="50" r="47" fill="none" stroke="url(#coinStroke)" stroke-width="2.6" filter="url(#cyberGlow)"/>
+  <circle cx="50" cy="50" r="44" fill="none" stroke="#222" stroke-width="1.5" opacity="0.7"/>
+  <!-- Detale monety: cyberpunkowe linie i kropki -->
+  <circle cx="25" cy="24" r="1.4" fill="#00ffb0" opacity="0.74"/>
+  <circle cx="75" cy="76" r="1.1" fill="#00ffb0" opacity="0.7"/>
+  <rect x="16" y="48" width="6" height="1.2" fill="#00ffae" opacity="0.5" rx="0.7" transform="rotate(-23 19 48)"/>
+  <rect x="78" y="49" width="6" height="1.2" fill="#00ffae" opacity="0.5" rx="0.7" transform="rotate(17 81 49)"/>
+  <rect x="38" y="11" width="2.7" height="6" fill="#00ffae" opacity="0.36" rx="1.2" transform="rotate(-25 39 14)"/>
+  <rect x="60" y="83" width="2.7" height="6" fill="#00ffae" opacity="0.36" rx="1.2" transform="rotate(15 61 86)"/>
+  <!-- Znak dolara $ - poprawna orientacja, dwie pionowe kreski "przekreślające" S -->
+  <g filter="url(#neonDollar)">
+    <!-- Lewa pionowa kreska -->
+    <rect x="45.5" y="21" width="2.4" height="58" rx="1.1" fill="url(#dollarNeon)" opacity="0.92"/>
+    <!-- Prawa pionowa kreska -->
+    <rect x="52.1" y="21" width="2.4" height="58" rx="1.1" fill="url(#dollarNeon)" opacity="0.92"/>
+    <!-- S prawdziwe (odwrócone) -->
+    <path d="M50 29
+             C42 29, 37 34, 37 41
+             C37 47, 42 50, 50 50
+             C58 50, 63 55, 63 61
+             C63 68, 58 73, 50 73"
+          fill="none" stroke="url(#dollarNeon)" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <!-- Cyberpunkowa poświata wokół dolara -->
+  <ellipse cx="50" cy="51" rx="17" ry="28" fill="#00ffae" opacity="0.10" filter="url(#cyberGlow)"/>
+  <ellipse cx="50" cy="51" rx="22" ry="28" fill="#00ffae" opacity="0.06" filter="url(#cyberGlow)"/>
+</svg>
