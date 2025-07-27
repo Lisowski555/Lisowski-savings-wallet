@@ -6,8 +6,6 @@ import * as React from "react";
 export default function SaveButton() {
     const queryClient = useQueryClient();
 
-    // THIS IS IMPORTANT!!!!!!!!!!!!!!
-    // TODO -> add forms / components / modals to update wallet for example add new savingsAccount / edit existing one
     const mutation = useMutation({
         mutationFn: saveWallet,
         onSuccess: (newWallet: Wallet) => {
